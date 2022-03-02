@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         //You can load .sfb files from URLs by using setSource(Context, Uri) on the ModelRenderable.Builder class.
 
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
