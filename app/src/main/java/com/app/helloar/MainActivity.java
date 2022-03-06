@@ -18,7 +18,6 @@ import com.google.ar.sceneform.ux.TransformableNode;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArFragment arFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,32 +29,32 @@ public class MainActivity extends AppCompatActivity {
 
         //You can load .sfb files from URLs by using setSource(Context, Uri) on the ModelRenderable.Builder class.
 
-        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
-            @Override
-            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
-                Anchor anchor = hitResult.createAnchor();
-                ModelRenderable.builder()
-                        .setSource(MainActivity.this, Uri.parse("eyeball.sfb"))
-                        .build()
-                        .thenAccept(modelRenderable -> addModelToScene(anchor, modelRenderable))
-                        .exceptionally(throwable -> {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                            builder.setMessage(throwable.getMessage()).show();
-                            return null;
-                        });
-            }
-        });
+//        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
+//        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
+//            @Override
+//            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
+//                Anchor anchor = hitResult.createAnchor();
+//                ModelRenderable.builder()
+//                        .setSource(MainActivity.this, Uri.parse("eyeball.sfb"))
+//                        .build()
+//                        .thenAccept(modelRenderable -> addModelToScene(anchor, modelRenderable))
+//                        .exceptionally(throwable -> {
+//                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                            builder.setMessage(throwable.getMessage()).show();
+//                            return null;
+//                        });
+//            }
+//        });
 
     }
 
-    private void addModelToScene(Anchor anchor, ModelRenderable modelRenderable) {
-        AnchorNode node = new AnchorNode(anchor);
-        TransformableNode transformableNode = new TransformableNode(arFragment.getTransformationSystem());
-        transformableNode.setParent(node);
-        transformableNode.setRenderable(modelRenderable);
-
-        arFragment.getArSceneView().getScene().addChild(node);
-        transformableNode.select();
-    }
+//    private void addModelToScene(Anchor anchor, ModelRenderable modelRenderable) {
+//        AnchorNode node = new AnchorNode(anchor);
+//        TransformableNode transformableNode = new TransformableNode(arFragment.getTransformationSystem());
+//        transformableNode.setParent(node);
+//        transformableNode.setRenderable(modelRenderable);
+//
+//        arFragment.getArSceneView().getScene().addChild(node);
+//        transformableNode.select();
+//    }
 }
