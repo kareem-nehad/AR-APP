@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/drawable/ar_gradient.xml" value="0.107" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/drawable/main_gradient.xml" value="0.25" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_news.xml" value="0.38621887666473653" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_organ_vis.xml" value="0.33" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/menu/bottom_nav_menu.xml" value="2.382142857142857" />
       </map>
     </option>

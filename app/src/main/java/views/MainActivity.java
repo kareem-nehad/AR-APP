@@ -1,26 +1,22 @@
-package com.app.helloar;
+package views;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
+import com.app.helloar.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.ar.core.Anchor;
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
-import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.rendering.ModelRenderable;
-import com.google.ar.sceneform.ux.ArFragment;
-import com.google.ar.sceneform.ux.BaseArFragment;
-import com.google.ar.sceneform.ux.TransformableNode;
+
+import fragments.DiagnosisFragment;
+import fragments.HomeFragment;
+import fragments.NewsFragment;
+import fragments.OrganVisFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         getViews();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentsContainer,new HomeFragment()).commit();
