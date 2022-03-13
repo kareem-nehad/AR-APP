@@ -1,8 +1,10 @@
-package com.app.helloar;
+package views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.app.helloar.R;
 
 public class SelectedNews extends AppCompatActivity {
 
