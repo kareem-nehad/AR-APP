@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import com.app.helloar.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.ar.sceneform.rendering.SceneformBundle;
+import com.google.ar.sceneform.utilities.SceneformBufferUtils;
+import com.google.ar.schemas.sceneform.SceneformBundleDef;
 
 import fragments.DiagnosisFragment;
 import fragments.HomeFragment;
@@ -28,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
         getViews();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentsContainer,new HomeFragment()).commit();
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
 
 
         //Test commit with yehya

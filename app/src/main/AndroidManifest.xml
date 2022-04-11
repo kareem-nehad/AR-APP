@@ -3,6 +3,7 @@
     package="com.app.helloar">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:name="android.hardware.camera.ar"
@@ -17,9 +18,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HelloAR">
+        android:theme="@style/Theme.HelloAR"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".OrganNoteActivity"
+            android:name="views.OrganNoteActivity"
             android:exported="false" />
         <activity
             android:name="views.MainActivity"
