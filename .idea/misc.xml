@@ -3,20 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/drawable/ar_gradient.xml" value="0.3305" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/drawable/main_gradient.xml" value="0.2965" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/drawable/news_info.xml" value="0.2985" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/drawable/note_gradient.xml" value="0.3305" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/layout/activity_main.xml" value="0.3211050724637681" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/layout/activity_organ_note.xml" value="0.33" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/layout/activity_selected_news.xml" value="0.36666666666666664" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/layout/fragment_news.xml" value="0.3211050724637681" />
-        <entry key="..\:/Android Studio/AR-APP/app/src/main/res/layout/fragment_organ_vis.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_main.xml" value="0.17475728155339806" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/drawable/ar_gradient.xml" value="0.107" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/drawable/main_gradient.xml" value="0.25" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_organ_note.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_selected_news.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_news.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_organ_vis.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/news_item.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/menu/bottom_nav_menu.xml" value="2.382142857142857" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

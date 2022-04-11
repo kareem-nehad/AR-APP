@@ -1,6 +1,7 @@
 package fragments;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.app.helloar.R;
 import com.google.ar.core.Anchor;
@@ -21,9 +23,12 @@ import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
+import views.OrganNoteActivity;
+
 public class OrganVisFragment extends Fragment {
 
     ArFragment arFragment;
+    Button takeNote;
 
     public OrganVisFragment() {
         // Required empty public constructor
@@ -54,6 +59,14 @@ public class OrganVisFragment extends Fragment {
             }
         });
 
+        takeNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), OrganNoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return v;
     }
 
@@ -68,5 +81,6 @@ public class OrganVisFragment extends Fragment {
 
     private void getViews(View v) {
         arFragment = (ArFragment) getChildFragmentManager().findFragmentById(R.id.organ_vis_fragment);
+        takeNote = v.findViewById(R.id.takeNoteButton);
     }
 }
