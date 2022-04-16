@@ -50,6 +50,12 @@ public class HomeFragment extends Fragment {
 
         // Diagnosis Card
         diagnosis.setBackgroundResource(R.drawable.home_gradient);
+        diagnosis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.bottomNavigationView.setSelectedItemId(R.id.diagnosisFragment);
+            }
+        });
 
         // Latest News Card
         latestNews.setBackgroundResource(R.drawable.home_gradient);
