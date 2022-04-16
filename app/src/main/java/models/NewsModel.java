@@ -1,15 +1,24 @@
 package models;
 
 public class NewsModel {
-    String id, image, title, subTitle, body;
+    String id, image, title, subTitle, body, date;
     //TODO: Add date variable
 
-    public NewsModel(String id, String image, String title, String subTitle, String body) {
+    public NewsModel(String id, String image, String title, String subTitle, String body,String date) {
         this.id = id;
         this.image = image;
         this.title = title;
         this.subTitle = subTitle;
         this.body = body;
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getId() {

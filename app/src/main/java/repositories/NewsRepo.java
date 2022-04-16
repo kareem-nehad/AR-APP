@@ -39,14 +39,13 @@ public class NewsRepo {
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject object = new JSONObject(String.valueOf(array.getJSONObject(i)));
 
-                            JSONObject idObject = new JSONObject(object.getString("_id"));
-                            String id = idObject.getString("$oid");
+                            String id = object.getString("id");
                             String image = object.getString("image");
                             String title = object.getString("title");
                             String subTitle = object.getString("sybTitle");
                             String body = object.getString("body");
-                            //TODO: obtain date from response
-                            tempList.add(new NewsModel(id,image,title,subTitle,body));
+                            String date = object.getString("date");
+                            tempList.add(new NewsModel(id,image,title,subTitle,body,date));
                         }
 
                         mutableLiveData.setValue(tempList);
