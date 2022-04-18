@@ -8,9 +8,9 @@
         android:id="@+id/newsFragment"
         android:icon="@drawable/news"/>
 
-    <item android:title="AR"
-        android:id="@+id/organVisFragment"
-        android:icon="@drawable/organ_visualization"/>
+    <item android:title="Wiki"
+        android:id="@+id/wikiFragment"
+        android:icon="@drawable/wiki"/>
 
     <item android:title="Diagnosis"
         android:id="@+id/diagnosisFragment"

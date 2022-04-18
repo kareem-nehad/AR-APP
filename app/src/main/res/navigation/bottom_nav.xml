@@ -25,4 +25,9 @@
         android:name="fragments.OrganVisFragment"
         android:label="fragment_organ_vis"
         tools:layout="@layout/fragment_organ_vis" />
+    <fragment
+        android:id="@+id/wikiFragment"
+        android:name="fragments.WikiFragment"
+        android:label="fragment_wiki"
+        tools:layout="@layout/fragment_wiki" />
 </navigation>

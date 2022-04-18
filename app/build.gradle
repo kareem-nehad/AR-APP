@@ -14,6 +14,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 25
+        renderscriptSupportModeEnabled true
     }
 
     buildTypes {
@@ -54,6 +56,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
     //OkHttp
     implementation 'com.squareup.okhttp3:okhttp'
+    // Blur
+    implementation 'jp.wasabeef:blurry:4.0.1'
 }
 
 sceneform.asset('sampledata/eyeball.obj',

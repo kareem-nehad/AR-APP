@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.NewsModel;
+import models.WikiModel;
 import okhttp3.ResponseBody;
 import retrofit.ApiInterface;
 import retrofit.RetrofitClient;
@@ -18,17 +18,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewsRepo {
+public class WikiRepo {
 
-    public MutableLiveData<List<NewsModel>> requestNews() {
-        final MutableLiveData<List<NewsModel>> mutableLiveData = new MutableLiveData<>();
+    public MutableLiveData<List<WikiModel>> requestWikis() {
+        final MutableLiveData<List<WikiModel>> mutableLiveData = new MutableLiveData<>();
 
         ApiInterface apiInterface = RetrofitClient.getRetrofitClient().create(ApiInterface.class);
-        apiInterface.getAllNews().enqueue(new Callback<ResponseBody>() {
+        apiInterface.getAllWiki().enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful() && response != null) {
-                    List<NewsModel> tempList = new ArrayList<>();
+                    List<WikiModel> tempList = new ArrayList<>();
 
                     try {
                         String json = response.body().string();
@@ -39,13 +39,11 @@ public class NewsRepo {
                         for (int i = 0; i < array.length(); i++) {
                             JSONObject object = new JSONObject(String.valueOf(array.getJSONObject(i)));
 
-                            String id = object.getString("id");
                             String image = object.getString("image");
                             String title = object.getString("title");
-                            String subTitle = object.getString("sybTitle");
-//                            String body = object.getString("body");
-                            String date = object.getString("date");
-                            tempList.add(new NewsModel(id,image,title,subTitle,date));
+                            String id = object.getString("id");
+
+                            tempList.add(new WikiModel(id,title,image));
                         }
 
                         mutableLiveData.setValue(tempList);

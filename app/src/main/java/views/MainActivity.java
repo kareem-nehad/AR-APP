@@ -12,14 +12,12 @@ import androidx.fragment.app.Fragment;
 import com.app.helloar.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.ar.sceneform.rendering.SceneformBundle;
-import com.google.ar.sceneform.utilities.SceneformBufferUtils;
-import com.google.ar.schemas.sceneform.SceneformBundleDef;
 
 import fragments.DiagnosisFragment;
 import fragments.HomeFragment;
 import fragments.NewsFragment;
 import fragments.OrganVisFragment;
+import fragments.WikiFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.newsFragment:
                         fragment = new NewsFragment();
                         break;
-                    case R.id.diagnosisFragment:
-                        fragment = new DiagnosisFragment();
+                    case R.id.wikiFragment:
+                        fragment = new WikiFragment();
                         break;
                     case R.id.organVisFragment:
                         fragment = new OrganVisFragment();
