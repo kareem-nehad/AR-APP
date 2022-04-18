@@ -8,4 +8,7 @@ public interface ApiInterface {
 
     @GET("v1/news/get_all")
     Call<ResponseBody> getAllNews();
+
+    @GET("v1/wiki/get_all")
+    Call<ResponseBody> getAllWiki();
 }

@@ -13,6 +13,14 @@ public class NewsModel {
         this.date = date;
     }
 
+    public NewsModel(String id, String image, String title, String subTitle, String date) {
+        this.id = id;
+        this.image = image;
+        this.title = title;
+        this.subTitle = subTitle;
+        this.date = date;
+    }
+
     public String getDate() {
         return date;
     }

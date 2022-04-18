@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="fragments.NewsFragment">
+    tools:context="fragments.WikiFragment" >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,28 +15,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/wiki_drawer"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/news_drawer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="0"
-                    android:src="@drawable/side_drawer" />
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
+                android:src="@drawable/side_drawer" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -47,18 +33,18 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/news_date"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/wiki_date"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TextView"
                     android:textColor="#3B3B3B"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="NEWS"
+                    android:text="Wiki"
                     android:textColor="#3B3B3B"
                     android:textSize="37sp"
                     android:textStyle="bold" />
@@ -70,22 +56,21 @@
                 android:layout_margin="20dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/newsRecycler"
+                    android:id="@+id/wikiRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <ProgressBar
-                    android:id="@+id/news_progress"
-                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:id="@+id/wiki_progress"
+                    style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:progressTint="#FFFFFF"
-                    android:indeterminateTint="@color/white"/>
+                    android:indeterminate="true"
+                    android:indeterminateTint="#FFFFFF" />
             </RelativeLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

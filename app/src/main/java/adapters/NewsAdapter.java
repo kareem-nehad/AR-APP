@@ -1,5 +1,7 @@
 package adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.helloar.R;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.blurry.Blurry;
 import models.NewsModel;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
@@ -39,7 +45,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int position) {
         NewsModel currentItem = newsList.get(position);
-        Picasso.get().load(currentItem.getImage()).into(holder.image);
+        try {
+            Bitmap bitmap = Picasso.get().load("http://143.110.151.110:5100/"+currentItem.getImage()).get();
+            Blurry.with(holder.itemView.getContext()).from(bitmap).into(holder.image);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         holder.title.setText(currentItem.getTitle());
         holder.subTitle.setText(currentItem.getSubTitle());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
