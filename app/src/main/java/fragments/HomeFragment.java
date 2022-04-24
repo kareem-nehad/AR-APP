@@ -2,7 +2,6 @@ package fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,11 +14,15 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.app.helloar.R;
-import com.squareup.picasso.Picasso;
+
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import models.NewsModel;
@@ -28,9 +31,10 @@ import views.SelectedNews;
 
 public class HomeFragment extends Fragment {
     TextView date;
-    CardView diagnosis, latestNews, notes, card1, card2;
+    CardView diagnosis, latestNews, notes, card1, card2, carouselCard;
     TextView card1_date, card1_title, card1_subTitle;
     TextView card2_date, card2_title, card2_subTitle;
+    ImageCarousel carousel;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -72,6 +76,15 @@ public class HomeFragment extends Fragment {
         // Notes Card
         notes.setBackgroundResource(R.drawable.home_gradient);
 
+        // Carousel Card
+        carouselCard.setBackgroundResource(R.drawable.home_gradient);
+        carouselCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.bottomNavigationView.setSelectedItemId(R.id.wikiFragment);
+            }
+        });
+
         //Static Card 1 settings
         NewsModel news1 = new NewsModel(
                 "1",
@@ -93,11 +106,11 @@ public class HomeFragment extends Fragment {
                         "The SCG participants were previously involved in another study at UCLA and were matched with people in the Big C group. The two groups were matched on age, sex, race, and estimated IQ.\n" +
                         "\n" +
                         "The researchers used fMRI testing on both groups while they were at rest and while they were engaged in tasks. They studied brain activity in different regions of the brain.",
-                "2022-04-16T13:55:24.922Z");
+                1649710750790L);
 
-        Date d1 = Date.from(Instant.parse(news1.getDate()));
+
         Calendar calendar1 = Calendar.getInstance();
-        calendar1.setTime(d1);
+        calendar1.setTimeInMillis(news1.getDate());
         card1_date.setText(calendar1.get(Calendar.DAY_OF_MONTH) + " "
                 + calendar1.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " "
                 + calendar1.get(Calendar.YEAR));
@@ -137,12 +150,12 @@ public class HomeFragment extends Fragment {
                         "“I firmly believe the elimination of cervical cancer is possible,” says Dr. Simelela.\n" +
                         "\n" +
                         "“In 2020 the Cervical Cancer Elimination InitiativeTrusted Source was launched to address several challenges including the inequity in vaccine access. This single-dose recommendation has the potential to take us faster to our goal of having 90% of girls vaccinated by the age of 15 by 2030.”",
-                "2022-04-16T13:55:24.922Z"
+                1649710750790L
         );
 
-        Date d2 = Date.from(Instant.parse(news2.getDate()));
+
         Calendar calendar2 = Calendar.getInstance();
-        calendar1.setTime(d2);
+        calendar1.setTimeInMillis(news2.getDate());
         card2_date.setText(calendar2.get(Calendar.DAY_OF_MONTH) + " "
                 + calendar2.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " "
                 + calendar2.get(Calendar.YEAR));
@@ -161,6 +174,17 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // Carousel Settings
+        carousel.registerLifecycle(getViewLifecycleOwner());
+        List<CarouselItem> carouselList = new ArrayList<>();
+        carouselList.add(new CarouselItem("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Heart_anterior_exterior_view.png/800px-Heart_anterior_exterior_view.png",
+                "Heart"));
+        carouselList.add(new CarouselItem("https://aighospitals.com/wp-content/uploads/2020/05/Centre-of-Liver-Transplant.png",
+                "Liver"));
+        carouselList.add(new CarouselItem("https://www.brainline.org/sites/all/modules/custom/bl_brain/images/brain-lateral.png",
+                "Brain"));
+        carousel.setData(carouselList);
+
 
         return view;
     }
@@ -178,5 +202,7 @@ public class HomeFragment extends Fragment {
         card2_subTitle = view.findViewById(R.id.home_news2_subTitle);
         card1 = view.findViewById(R.id.card1);
         card2 = view.findViewById(R.id.card2);
+        carousel = view.findViewById(R.id.home_carousel);
+        carouselCard = view.findViewById(R.id.home_carousel_card);
     }
 }

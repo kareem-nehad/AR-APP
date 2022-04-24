@@ -1,5 +1,6 @@
 package adapters;
 
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import at.favre.lib.dali.Dali;
 import models.WikiModel;
 
 public class WikiAdapter extends RecyclerView.Adapter<WikiAdapter.ViewHolder> {

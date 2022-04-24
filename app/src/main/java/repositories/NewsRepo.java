@@ -7,8 +7,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import models.NewsModel;
 import okhttp3.ResponseBody;
@@ -43,9 +46,13 @@ public class NewsRepo {
                             String image = object.getString("image");
                             String title = object.getString("title");
                             String subTitle = object.getString("sybTitle");
-//                            String body = object.getString("body");
-                            String date = object.getString("date");
-                            tempList.add(new NewsModel(id,image,title,subTitle,date));
+
+                            JSONObject dateObject = new JSONObject(String.valueOf(object.getJSONObject("date")));
+                            long date = dateObject.getLong("$date");
+                            Calendar calendar = Calendar.getInstance();
+                            calendar.setTimeInMillis(date);
+                            System.out.println(calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " " + Calendar.getInstance().get(Calendar.YEAR));
+                            tempList.add(new NewsModel(id,image,title,subTitle, date));
                         }
 
                         mutableLiveData.setValue(tempList);

@@ -46,7 +46,7 @@ public class NewsFragment extends Fragment {
         newsRecycler.setHasFixedSize(true);
         newsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new NewsAdapter();
+        adapter = new NewsAdapter(getContext());
         newsRecycler.setAdapter(adapter);
 
         // ViewModel implementation

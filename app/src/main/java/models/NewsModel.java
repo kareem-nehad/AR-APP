@@ -1,10 +1,11 @@
 package models;
 
 public class NewsModel {
-    String id, image, title, subTitle, body, date;
+    String id, image, title, subTitle, body;
+    long date;
     //TODO: Add date variable
 
-    public NewsModel(String id, String image, String title, String subTitle, String body,String date) {
+    public NewsModel(String id, String image, String title, String subTitle, String body,long date) {
         this.id = id;
         this.image = image;
         this.title = title;
@@ -13,7 +14,7 @@ public class NewsModel {
         this.date = date;
     }
 
-    public NewsModel(String id, String image, String title, String subTitle, String date) {
+    public NewsModel(String id, String image, String title, String subTitle, long date) {
         this.id = id;
         this.image = image;
         this.title = title;
@@ -21,11 +22,11 @@ public class NewsModel {
         this.date = date;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 

@@ -25,7 +25,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/news_item_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -41,7 +41,7 @@
                 android:id="@+id/news_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView6"
+                android:layout_below="@id/news_item_date"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#80000000"

@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.wikiFragment:
                         fragment = new WikiFragment();
                         break;
-                    case R.id.organVisFragment:
-                        fragment = new OrganVisFragment();
+                    case R.id.diagnosisFragment:
+                        fragment = new DiagnosisFragment();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentsContainer,fragment).commit();
