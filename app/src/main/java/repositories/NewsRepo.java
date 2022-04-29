@@ -1,6 +1,11 @@
 package repositories;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.MutableLiveData;
+
+import com.google.gson.internal.bind.util.ISO8601Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -8,8 +13,17 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -28,6 +42,7 @@ public class NewsRepo {
 
         ApiInterface apiInterface = RetrofitClient.getRetrofitClient().create(ApiInterface.class);
         apiInterface.getAllNews().enqueue(new Callback<ResponseBody>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful() && response != null) {
@@ -46,17 +61,15 @@ public class NewsRepo {
                             String image = object.getString("image");
                             String title = object.getString("title");
                             String subTitle = object.getString("sybTitle");
-
-                            JSONObject dateObject = new JSONObject(String.valueOf(object.getJSONObject("date")));
-                            long date = dateObject.getLong("$date");
-                            Calendar calendar = Calendar.getInstance();
-                            calendar.setTimeInMillis(date);
-                            System.out.println(calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " " + Calendar.getInstance().get(Calendar.YEAR));
+                            String date = object.getString("date");
+                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+                            Date d = format.parse(date);
+                            System.out.println(d.toString());
                             tempList.add(new NewsModel(id,image,title,subTitle, date));
                         }
 
                         mutableLiveData.setValue(tempList);
-                    } catch (IOException | JSONException e) {
+                    } catch (IOException | JSONException | ParseException e) {
                         e.printStackTrace();
                     }
                 } else {

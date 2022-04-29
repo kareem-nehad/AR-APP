@@ -21,6 +21,9 @@
         android:theme="@style/Theme.HelloAR"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="views.SelectedWiki"
+            android:exported="false" />
+        <activity
             android:name="views.OrganNoteActivity"
             android:exported="false" />
         <activity

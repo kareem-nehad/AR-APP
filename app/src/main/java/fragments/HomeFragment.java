@@ -106,14 +106,17 @@ public class HomeFragment extends Fragment {
                         "The SCG participants were previously involved in another study at UCLA and were matched with people in the Big C group. The two groups were matched on age, sex, race, and estimated IQ.\n" +
                         "\n" +
                         "The researchers used fMRI testing on both groups while they were at rest and while they were engaged in tasks. They studied brain activity in different regions of the brain.",
-                1649710750790L);
+                "2022-04-29T11:56:33.834Z");
 
 
-        Calendar calendar1 = Calendar.getInstance();
-        calendar1.setTimeInMillis(news1.getDate());
-        card1_date.setText(calendar1.get(Calendar.DAY_OF_MONTH) + " "
-                + calendar1.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " "
-                + calendar1.get(Calendar.YEAR));
+//        Calendar calendar1 = Calendar.getInstance();
+//        calendar1.setTimeInMillis(news1.getDate());
+//        card1_date.setText(calendar1.get(Calendar.DAY_OF_MONTH) + " "
+//                + calendar1.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " "
+//                + calendar1.get(Calendar.YEAR));
+
+        Date dt1 = Date.from(Instant.parse(news1.getDate()));
+        card1_date.setText(dt1.toString());
 
         card1_title.setText(news1.getTitle());
         card1_subTitle.setText(news1.getSubTitle());
@@ -150,15 +153,17 @@ public class HomeFragment extends Fragment {
                         "“I firmly believe the elimination of cervical cancer is possible,” says Dr. Simelela.\n" +
                         "\n" +
                         "“In 2020 the Cervical Cancer Elimination InitiativeTrusted Source was launched to address several challenges including the inequity in vaccine access. This single-dose recommendation has the potential to take us faster to our goal of having 90% of girls vaccinated by the age of 15 by 2030.”",
-                1649710750790L
+                "2022-04-29T11:56:33.834Z"
         );
 
 
-        Calendar calendar2 = Calendar.getInstance();
-        calendar1.setTimeInMillis(news2.getDate());
-        card2_date.setText(calendar2.get(Calendar.DAY_OF_MONTH) + " "
-                + calendar2.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " "
-                + calendar2.get(Calendar.YEAR));
+//        Calendar calendar2 = Calendar.getInstance();
+//        calendar1.setTimeInMillis(news2.getDate());
+//        card2_date.setText(calendar2.get(Calendar.DAY_OF_MONTH) + " "
+//                + calendar2.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " "
+//                + calendar2.get(Calendar.YEAR));
+        Date dt2 = Date.from(Instant.parse(news2.getDate()));
+        card2_date.setText(dt2.toString());
 
         card2_title.setText(news2.getTitle());
         card2_subTitle.setText(news2.getSubTitle());

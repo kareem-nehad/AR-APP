@@ -3,6 +3,7 @@ package adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.helloar.R;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -45,6 +49,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int position) {
@@ -66,11 +71,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.title.setText(currentItem.getTitle());
 
         // Date handling
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(currentItem.getDate());
-        holder.date.setText(calendar.get(Calendar.DAY_OF_MONTH) + " "
-                + calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " "
-                + calendar.get(Calendar.YEAR));
+        java.util.Date dt = Date.from(Instant.parse(currentItem.getDate()));
+        holder.date.setText(dt.toString());
 
         holder.subTitle.setText(currentItem.getSubTitle());
 
