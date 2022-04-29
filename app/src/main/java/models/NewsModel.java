@@ -4,7 +4,7 @@ public class NewsModel {
     String id, image, title, subTitle, body, date;
     //TODO: Add date variable
 
-    public NewsModel(String id, String image, String title, String subTitle, String body,String date) {
+    public NewsModel(String id, String image, String title, String subTitle, String body, String date) {
         this.id = id;
         this.image = image;
         this.title = title;

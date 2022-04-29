@@ -299,6 +299,57 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/home_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="20dp"
+                app:showNavigationButtons="false"
+                app:showTopShadow="false"
+                app:showBottomShadow="false"
+                app:captionTextSize="30sp"
+                app:imageScaleType="centerInside"
+                app:carouselGravity="CENTER"
+                app:autoPlay="true"
+                app:infiniteCarousel="true"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/home_carousel_card"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Check out all organs"
+                        android:textColor="#FFFFFF"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/go_to" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

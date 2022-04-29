@@ -57,7 +57,10 @@ dependencies {
     //OkHttp
     implementation 'com.squareup.okhttp3:okhttp'
     // Blur
-    implementation 'jp.wasabeef:blurry:4.0.1'
+    implementation 'at.favre.lib:dali:0.4.0'
+    //Card Slider
+    implementation 'me.relex:circleindicator:2.1.6'
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
 }
 
 sceneform.asset('sampledata/eyeball.obj',
