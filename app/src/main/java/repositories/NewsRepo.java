@@ -62,14 +62,11 @@ public class NewsRepo {
                             String title = object.getString("title");
                             String subTitle = object.getString("sybTitle");
                             String date = object.getString("date");
-                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-                            Date d = format.parse(date);
-                            System.out.println(d.toString());
                             tempList.add(new NewsModel(id,image,title,subTitle, date));
                         }
 
                         mutableLiveData.setValue(tempList);
-                    } catch (IOException | JSONException | ParseException e) {
+                    } catch (IOException | JSONException e) {
                         e.printStackTrace();
                     }
                 } else {
@@ -83,6 +80,45 @@ public class NewsRepo {
             }
         });
 
+        return mutableLiveData;
+    }
+
+    public MutableLiveData<NewsModel> getSelectedNews(String id) {
+        final MutableLiveData<NewsModel> mutableLiveData = new MutableLiveData<>();
+
+        ApiInterface apiInterface = RetrofitClient.getRetrofitClient().create(ApiInterface.class);
+        apiInterface.getSelectedNews(id).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response != null && response.isSuccessful()) {
+                    NewsModel tempModel = new NewsModel();
+                    try{
+                        String json = response.body().string();
+                        System.out.println(json);
+                        JSONObject object = new JSONObject(json);
+
+                        String title = object.getString("title");
+                        String body = object.getString("body");
+                        String date = object.getString("date");
+                        String subTitle = object.getString("sybTitle");
+                        String image = object.getString("image");
+                        String id = object.getString("id");
+
+                        tempModel = new NewsModel(id,image,title,subTitle,body,date);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    mutableLiveData.setValue(tempModel);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
         return mutableLiveData;
     }
 }

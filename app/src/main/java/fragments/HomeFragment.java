@@ -128,6 +128,7 @@ public class HomeFragment extends Fragment {
                 intent.putExtra("title", news1.getTitle());
                 intent.putExtra("subTitle", news1.getSubTitle());
                 intent.putExtra("body", news1.getBody());
+                intent.putExtra("from", "home");
                 startActivity(intent);
             }
         });
@@ -175,6 +176,7 @@ public class HomeFragment extends Fragment {
                 intent.putExtra("title", news2.getTitle());
                 intent.putExtra("subTitle", news2.getSubTitle());
                 intent.putExtra("body", news2.getBody());
+                intent.putExtra("from", "home");
                 startActivity(intent);
             }
         });

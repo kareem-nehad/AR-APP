@@ -2,6 +2,7 @@ package adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ import java.util.Locale;
 
 import at.favre.lib.dali.Dali;
 import models.NewsModel;
+import views.SelectedNews;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
@@ -71,15 +73,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.title.setText(currentItem.getTitle());
 
         // Date handling
-        java.util.Date dt = Date.from(Instant.parse(currentItem.getDate()));
-        holder.date.setText(dt.toString());
+        holder.date.setText(currentItem.getDate().substring(0,10));
 
         holder.subTitle.setText(currentItem.getSubTitle());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("clicked " + currentItem.getTitle());
+                Intent intent = new Intent(holder.itemView.getContext(), SelectedNews.class);
+                intent.putExtra("image", "http://143.110.151.110:5100/"+currentItem.getImage());
+                intent.putExtra("title", currentItem.getTitle());
+                intent.putExtra("subTitle", currentItem.getSubTitle());
+                intent.putExtra("body", currentItem.getBody());
+                intent.putExtra("id", currentItem.getId());
+                intent.putExtra("from", "news");
+                holder.itemView.getContext().startActivity(intent);
             }
         });
     }

@@ -63,4 +63,44 @@ public class WikiRepo {
 
         return mutableLiveData;
     }
+
+    public MutableLiveData<WikiModel> requestSelectedWiki(String id) {
+        final MutableLiveData<WikiModel> mutableLiveData = new MutableLiveData<>();
+
+        ApiInterface apiInterface = RetrofitClient.getRetrofitClient().create(ApiInterface.class);
+        apiInterface.getSelectedWiki(id).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                WikiModel tempModel = new WikiModel();
+                if (response.isSuccessful() && response.isSuccessful()) {
+                    try {
+                        String json = response.body().string();
+                        System.out.println(json);
+                        JSONObject object = new JSONObject(json);
+
+                        String image = object.getString("image");
+                        String model = object.getString("model");
+                        String title = object.getString("title");
+                        String category = object.getString("cat");
+                        String body = object.getString("body");
+                        String id = object.getString("id");
+
+                        tempModel = new WikiModel(title,image,model,category,body);
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    mutableLiveData.setValue(tempModel);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+        return mutableLiveData;
+    }
 }

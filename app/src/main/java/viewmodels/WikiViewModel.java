@@ -11,6 +11,7 @@ import repositories.WikiRepo;
 public class WikiViewModel {
     private WikiRepo wikiRepo;
     private MutableLiveData<List<WikiModel>> mutableLiveData;
+    private MutableLiveData<WikiModel> selectedWiki;
 
     public WikiViewModel () {
         this.wikiRepo = new WikiRepo();
@@ -22,5 +23,13 @@ public class WikiViewModel {
         }
 
         return mutableLiveData;
+    }
+
+    public LiveData<WikiModel> getSelectedWiki(String id) {
+        if (selectedWiki == null) {
+            selectedWiki = wikiRepo.requestSelectedWiki(id);
+        }
+
+        return selectedWiki;
     }
 }

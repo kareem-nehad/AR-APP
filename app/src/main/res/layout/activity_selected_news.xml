@@ -19,55 +19,65 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/selectedNews_image"
+                <ProgressBar
+                    android:id="@+id/selectedNews_Progress"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:layout_height="200dp">
 
-                <ImageView
-                    android:id="@+id/selectedNews_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:tint="#FFFFFF"
-                    app:srcCompat="@drawable/back_to_news" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="30dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/selectedNews_Title"
+                    <ImageView
+                        android:id="@+id/selectedNews_image"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#80000000"
-                        android:maxLines="2"
-                        android:text="TextView"
-                        android:textColor="#FFFFFF"
-                        android:textSize="28sp"
-                        android:textStyle="bold" />
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        tools:srcCompat="@tools:sample/avatars" />
 
-                    <TextView
-                        android:id="@+id/selectedNews_SubTitle"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/selectedNews_back"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="#80000000"
-                        android:maxLines="2"
-                        android:text="TextView"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:tint="#FFFFFF"
+                        app:srcCompat="@drawable/back_to_news" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/selectedNews_Title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#80000000"
+                            android:maxLines="2"
+                            android:textColor="#FFFFFF"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/selectedNews_SubTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="#80000000"
+                            android:maxLines="2"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </RelativeLayout>
             </RelativeLayout>
 
             <LinearLayout
@@ -81,7 +91,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="20dp"
-                    android:text="TextView"
                     android:textColor="#3B3B3B"
                     android:textSize="18sp" />
             </LinearLayout>

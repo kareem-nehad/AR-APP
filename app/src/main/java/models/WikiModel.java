@@ -17,6 +17,9 @@ public class WikiModel {
         this.body = body;
     }
 
+    public WikiModel() {
+    }
+
     public String getId() {
         return id;
     }

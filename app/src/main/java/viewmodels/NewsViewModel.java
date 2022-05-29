@@ -12,6 +12,7 @@ import repositories.NewsRepo;
 public class NewsViewModel extends ViewModel {
     private NewsRepo newsRepo;
     private MutableLiveData<List<NewsModel>> mutableLiveData;
+    private MutableLiveData<NewsModel> selectedNews;
 
     public NewsViewModel() {
         this.newsRepo = new NewsRepo();
@@ -23,6 +24,14 @@ public class NewsViewModel extends ViewModel {
         }
 
         return mutableLiveData;
+    }
+
+    public LiveData<NewsModel> getSelectedNews(String id) {
+        if (selectedNews == null) {
+            selectedNews = newsRepo.getSelectedNews(id);
+        }
+
+        return  selectedNews;
     }
 
 }
