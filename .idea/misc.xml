@@ -11,12 +11,16 @@
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_organ_note.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_selected_news.xml" value="0.33" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/activity_selected_wiki.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_add.xml" value="0.33" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_diagnosis.xml" value="0.2777777777777778" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_home.xml" value="0.30462962962962964" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_news.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_notes.xml" value="0.33" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_organ_vis.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_retinopathy.xml" value="0.3463541666666667" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/fragment_wiki.xml" value="0.2777777777777778" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/news_item.xml" value="0.33" />
+        <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/note_item.xml" value="0.3" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/layout/wiki_item.xml" value="0.2777777777777778" />
         <entry key="..\:/Users/karee/AndroidStudioProjects/HelloAR2/app/src/main/res/menu/bottom_nav_menu.xml" value="2.382142857142857" />
       </map>

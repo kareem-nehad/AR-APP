@@ -1,13 +1,13 @@
 package fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 import com.app.helloar.R;
 
@@ -17,6 +17,7 @@ import java.util.Locale;
 public class DiagnosisFragment extends Fragment {
 
     TextView date;
+    CardView retinotherapy;
 
     public DiagnosisFragment() {
         // Required empty public constructor
@@ -33,10 +34,19 @@ public class DiagnosisFragment extends Fragment {
         Calendar calendar = Calendar.getInstance();
         date.setText(calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault()) + " " + Calendar.getInstance().get(Calendar.YEAR));
 
+        // Retinotherapy
+        retinotherapy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragmentsContainer, new RetinopathyFragment()).commit();
+            }
+        });
+
         return view;
     }
 
     private void getViews(View view) {
         date = view.findViewById(R.id.diagnosis_date);
+        retinotherapy = view.findViewById(R.id.retinotherapyCard);
     }
 }

@@ -75,6 +75,12 @@ public class HomeFragment extends Fragment {
 
         // Notes Card
         notes.setBackgroundResource(R.drawable.home_gradient);
+        notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragmentsContainer,new NotesFragment()).commit();
+            }
+        });
 
         // Carousel Card
         carouselCard.setBackgroundResource(R.drawable.home_gradient);

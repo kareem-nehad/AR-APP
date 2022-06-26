@@ -1,6 +1,7 @@
 package views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
+import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.app.helloar.R;
@@ -23,14 +25,15 @@ public class SelectedWiki extends AppCompatActivity {
     Button view3D;
     TextView category, body, title;
     ProgressBar progressBar;
-    ScrollView scrollView;
+    ConstraintLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_wiki);
         getViews();
-        scrollView.setVisibility(View.INVISIBLE);
+        layout.setVisibility(View.INVISIBLE);
+        body.setScroller(new Scroller(this));
 
         Intent intent = getIntent();
 
@@ -39,7 +42,7 @@ public class SelectedWiki extends AppCompatActivity {
             @Override
             public void onChanged(WikiModel wikiModel) {
                 progressBar.setVisibility(View.GONE);
-                scrollView.setVisibility(View.VISIBLE);
+                layout.setVisibility(View.VISIBLE);
                 Picasso.get().load("http://143.110.151.110:5100/"+wikiModel.getImage()).into(image);
                 category.setText(wikiModel.getCategory());
                 title.setText(wikiModel.getTitle());
@@ -55,6 +58,6 @@ public class SelectedWiki extends AppCompatActivity {
         title = findViewById(R.id.Selectedwiki_title);
         body = findViewById(R.id.selectedWiki_body);
         progressBar = findViewById(R.id.progressBar_wiki);
-        scrollView = findViewById(R.id.scrollView_wiki);
+        layout = findViewById(R.id.selectedWikiLayout);
     }
 }
