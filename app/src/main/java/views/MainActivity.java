@@ -15,8 +15,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import fragments.DiagnosisFragment;
 import fragments.HomeFragment;
+import fragments.MuseumFragment;
 import fragments.NewsFragment;
-import fragments.OrganVisFragment;
 import fragments.WikiFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,35 +51,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.diagnosisFragment:
                         fragment = new DiagnosisFragment();
                         break;
+                    case R.id.museumFragment:
+                        fragment = new MuseumFragment();
+                        break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentsContainer,fragment).commit();
                 return true;
             }
         });
-
-
-
-
-        //Test commit with yehya
-
-        //You can load .sfb files from URLs by using setSource(Context, Uri) on the ModelRenderable.Builder class.
-
-//        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-//        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
-//            @Override
-//            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
-//                Anchor anchor = hitResult.createAnchor();
-//                ModelRenderable.builder()
-//                        .setSource(MainActivity.this, Uri.parse("eyeball.sfb"))
-//                        .build()
-//                        .thenAccept(modelRenderable -> addModelToScene(anchor, modelRenderable))
-//                        .exceptionally(throwable -> {
-//                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-//                            builder.setMessage(throwable.getMessage()).show();
-//                            return null;
-//                        });
-//            }
-//        });
 
     }
 
@@ -87,13 +66,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavView);
     }
 
-//    private void addModelToScene(Anchor anchor, ModelRenderable modelRenderable) {
-//        AnchorNode node = new AnchorNode(anchor);
-//        TransformableNode transformableNode = new TransformableNode(arFragment.getTransformationSystem());
-//        transformableNode.setParent(node);
-//        transformableNode.setRenderable(modelRenderable);
-//
-//        arFragment.getArSceneView().getScene().addChild(node);
-//        transformableNode.select();
-//    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        moveTaskToBack(true);
+    }
 }

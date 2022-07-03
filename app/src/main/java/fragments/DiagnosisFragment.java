@@ -17,7 +17,7 @@ import java.util.Locale;
 public class DiagnosisFragment extends Fragment {
 
     TextView date;
-    CardView retinotherapy;
+    CardView retinotherapy, deathEstimator;
 
     public DiagnosisFragment() {
         // Required empty public constructor
@@ -42,11 +42,20 @@ public class DiagnosisFragment extends Fragment {
             }
         });
 
+        // Death Estimator
+        deathEstimator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager().beginTransaction().replace(R.id.fragmentsContainer, new DeathEstimatorFragment()).commit();
+            }
+        });
+
         return view;
     }
 
     private void getViews(View view) {
         date = view.findViewById(R.id.diagnosis_date);
         retinotherapy = view.findViewById(R.id.retinotherapyCard);
+        deathEstimator = view.findViewById(R.id.estimatorCard);
     }
 }

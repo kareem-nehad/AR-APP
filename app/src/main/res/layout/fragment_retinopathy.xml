@@ -57,10 +57,11 @@
                 app:hintTextColor="#000000">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ageInput_retinopathy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:allowUndo="true"
-                    android:inputType="number"
+                    android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textColorLink="#000000"
                     android:textSize="20sp" />
@@ -84,9 +85,10 @@
                 app:hintTextColor="#000000">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/systolicInput_retinopathy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
+                    android:inputType="number|numberDecimal"
                     android:singleLine="true"
                     android:textColorLink="#000000"
                     android:textSize="20sp" />
@@ -109,9 +111,10 @@
                 app:hintTextColor="#000000">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/diastolicInput_retinopathy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
+                    android:inputType="number|numberDecimal"
                     android:singleLine="true"
                     android:textColorLink="#000000"
                     android:textSize="20sp" />
@@ -134,16 +137,17 @@
                 app:hintTextColor="#000000">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cholestrolInput_retinopathy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
+                    android:inputType="number|numberDecimal"
                     android:singleLine="true"
                     android:textColorLink="#000000"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/check_retinopathy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

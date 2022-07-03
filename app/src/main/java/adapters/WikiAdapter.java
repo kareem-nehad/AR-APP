@@ -49,6 +49,7 @@ public class WikiAdapter extends RecyclerView.Adapter<WikiAdapter.ViewHolder> {
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), SelectedWiki.class);
                 intent.putExtra("id", currentItem.getId());
+                intent.putExtra("from","adapter");
                 holder.itemView.getContext().startActivity(intent);
             }
         });

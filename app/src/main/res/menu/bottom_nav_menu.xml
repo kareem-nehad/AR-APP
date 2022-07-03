@@ -16,4 +16,8 @@
         android:id="@+id/diagnosisFragment"
         android:icon="@drawable/diagnosis" />
 
+    <item android:title="Museum"
+        android:id="@+id/museumFragment"
+        android:icon="@drawable/organ_visualization"/>
+
 </menu>

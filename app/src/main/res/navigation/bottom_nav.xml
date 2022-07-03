@@ -30,4 +30,9 @@
         android:name="fragments.WikiFragment"
         android:label="fragment_wiki"
         tools:layout="@layout/fragment_wiki" />
+    <fragment
+        android:id="@+id/museumFragment"
+        android:name="fragments.MuseumFragment"
+        android:label="fragment_museum"
+        tools:layout="@layout/fragment_museum" />
 </navigation>

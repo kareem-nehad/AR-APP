@@ -71,10 +71,12 @@ dependencies {
     //noinspection LifecycleAnnotationProcessorWithJava8
     annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
     implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
+    //GIF
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.24'
 }
 
-sceneform.asset('sampledata/eyeball.obj',
+sceneform.asset('sampledata/brain.fbx',
 'default',
-'sampledata/eyeball.sfa',
-'src/main/assets/eyeball'
+'sampledata/brain.sfa',
+'src/main/assets/brain'
 )

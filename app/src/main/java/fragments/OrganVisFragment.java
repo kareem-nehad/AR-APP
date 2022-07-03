@@ -81,6 +81,5 @@ public class OrganVisFragment extends Fragment {
 
     private void getViews(View v) {
         arFragment = (ArFragment) getChildFragmentManager().findFragmentById(R.id.organ_vis_fragment);
-        takeNote = v.findViewById(R.id.takeNoteButton);
     }
 }

@@ -1,0 +1,531 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragments.DeathEstimatorFragment" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_gradient"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/estimatorTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:text="10-Year Death Estimator"
+                android:textColor="#3B3B3B"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/estimatorDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Disclaimer: Our estimator is only a tool that calculates mortality rate based on the given inputs and does not reflect any circumstances taking place in day to day matters."
+                android:textColor="#6A6A6A"
+                android:textSize="24sp"
+                android:textStyle="bold|italic" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Age"
+                android:textColorHint="#000000"
+                android:touchscreenBlocksFocus="true"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ageInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:allowUndo="true"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Systolic Blood Pressure"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/systolicInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Diastolic Blood Pressure"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/diastolicInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Cholestrol"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cholestrolInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Poverty index"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/povertyInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Race"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/raceInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Red Blood Cells"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rbcInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Sedimentation Rate"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sedimentationInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Albumin"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/albuminInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Iron"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ironInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Magnesium"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/magnesiumInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Protein"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/proteinInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Gender"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/genderInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp"
+                    android:hint="1 for Male 2 for Female"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="TIBC"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tibcInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="TS"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tsInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="White Blood Cells"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/whiteBloodCellsInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="BMI"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/BMIInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Pulse"
+                android:textColorHint="#000000"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:counterEnabled="false"
+                app:errorEnabled="false"
+                app:helperTextEnabled="false"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="#000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pulsePressureInput_estimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|numberDecimal"
+                    android:singleLine="true"
+                    android:textColorLink="#000000"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/check_estimator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FFFFFF"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Check Results"
+                android:textColor="#7eafe8"
+                app:cornerRadius="10dp"
+                app:strokeColor="#a7e5fb"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

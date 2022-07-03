@@ -23,6 +23,9 @@
     <uses-feature
         android:glEsVersion="0x00030000"
         android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -33,6 +36,18 @@
         android:theme="@style/Theme.HelloAR"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="views.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="views.OrganVisActivity"
+            android:exported="false" />
+        <activity
             android:name="views.SelectedWiki"
             android:exported="false" />
         <activity
@@ -40,12 +55,7 @@
             android:exported="false" />
         <activity
             android:name="views.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name="views.SelectedNews"
